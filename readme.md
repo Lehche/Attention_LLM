@@ -88,7 +88,7 @@ Here is the first generation (Loss : 2.6)
 The Second generation (Loss : 1.3)
 > **i went by** seeing so well before, and counts towards them, and were the long journey to be env-w them. The principal lessons they had not able to improve it was a few and left, uncomfort'clock at the widow and fatherless and other the great lakes, and other Indians and the great miles away. The answer was the other, but had the great looking around in the missionary came and began to meet the land to them had been from where the first Indian said there, they had some had a faithful with clay, they had to hear that point where the missionary. They had to talk,
 
-We not the radical differences of language, and understanding abilities
+We note the radical differences of language, and understanding abilities
 
 <small>Note: These are short extracts of the output; each generation was capped at a total of 800 tokens.</small>
 
