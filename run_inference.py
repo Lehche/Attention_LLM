@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from transformers import PreTrainedTokenizerFast
 
-# --- Model architecture (same as notebook) ---
+# Model architecture
 TOKEN_NUMBER = 32000
 LAYER_NUMBER = 8
 LONGUEUR_BLOC = 2048
@@ -90,7 +90,7 @@ class MainModel(nn.Module):
         return logits
 
 
-# --- Utilities and generation ---
+# Utilities + generation
 
 
 def load_tokenizer(path):
@@ -269,7 +269,7 @@ def main():
             top_k=args.top_k if args.top_k > 0 else None,
         )
 
-        print('\n=== Generated ===')
+        print('\n Generated')
         print(text)
 
 
