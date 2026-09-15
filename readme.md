@@ -105,3 +105,11 @@ Coding a Transformer entirely from scratch instead of just importing `nn.Transfo
 
 
 
+### Weights & Inference
+
+> [!NOTE]
+> The trained model weights (`FreakyLLM.pth`, ~350MB) are available in the **[Releases](https://github.com/Lehche/Attention_LLM/releases)** tab.
+
+Download the file into the `models/` directory and run the provided inference script to test the model.
+
+
