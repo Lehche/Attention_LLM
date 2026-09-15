@@ -1,14 +1,17 @@
 # Attention Transformer Model
 *Based on the foundational paper "Attention Is All You Need" (Vaswani et al., 2017), Google*
 
+
 ### Project Overview
 While the original architecture was intended for state-of-the-art translation, I adapted it in this project to create a predictive text writer. My main objectives were:
 - To create a a next-word predictor (similar to smartphone keyboard suggestions)
 - To create a Story Generator from a starting sentence, testing the model's actual language understanding and context retention capacities.
 
 
+
 ### Architecture
 *(Reference paper: [Attention Is All You Need](https://arxiv.org/pdf/1706.03762))*
+
 
 #### Model Structure
 While the original paper relies on a full Encoder-Decoder structure for translation tasks, I modified the design to a **Decoder-only** autoregressive architecture (similar to modern LLMs like GPT). The entire model was built from scratch using PyTorch, without relying on pre-built Transformer layers.
@@ -17,6 +20,7 @@ Model mapping from the paper :
 <p align="center">
 <img width="453" height="633" alt="image" src="https://github.com/user-attachments/assets/52b40601-45e8-44f1-9236-104dea00f727" />
 </p>
+
 
 #### Attention Function Mapping
 To bridge the gap between theory and practice, I mapped the theoretical Multi-Head Attention mechanism directly to my custom PyTorch implementation:
@@ -29,6 +33,7 @@ To bridge the gap between theory and practice, I mapped the theoretical Multi-He
 <p align="center">
   <em>Left: Original mechanism from the paper | Right: My PyTorch implementation</em>
 </p>
+
 
 
 ### Training
@@ -46,6 +51,7 @@ As shown in the loss evolution graph below, the curve shows no signs of stagnati
 </p>
 
 
+
 ### Results & Observations
 
 Testing the model's capabilities revealed interesting insights into its language understanding and generation behavior:
@@ -56,10 +62,12 @@ Using Greedy Inference (always picking the highest probability word), the model 
 Increasing the heat breaks the loops and adds creativity, but pushes the model to hallucinate or generate nonsensical text with very little word to word grammatical/language accuracy.
 During early testing, the model tended to generate the `<|endoftext|>` token too frequently, abruptly stopping generation after a few sentences. To evaluate longer outputs, to solve this and observe longer story generation i manually changed the EOS token's probability to `-inf` to force the model to keep writing without interfering too much into its thought processes.
 
+
 #### Short Generation results (extract):
 > **I went to the** band marches and put him down on. "I don't go." He turned to say in a few weeks. "You're going to him, skimming a few minutes." She wants good money out of me later." She's an open in his head. He looked at him away. She felt so bad glass said, but she'd invited me." Allen when she looked over and Allen back on her her out of her the door. She looked at him a couple of her like that very pot. "She looked over Allenose in a few days, she's breakfast, and went back." Mom. Rick about her, and she'd found the money out, and Allen's seat.
 
 we note some language errors such as "she's breakfast" and the lost of meaning after a few sentences.
+
 
 #### Evolution of the model (4 hours vs 12 hours):
 An Interesting example is the difference of result when the model was trained for 4 hours compared to 12,
@@ -71,6 +79,10 @@ The Second generation (Loss : 1.3)
 > **i went by** seeing so well before, and counts towards them, and were the long journey to be env-w them. The principal lessons they had not able to improve it was a few and left, uncomfort'clock at the widow and fatherless and other the great lakes, and other Indians and the great miles away. The answer was the other, but had the great looking around in the missionary came and began to meet the land to them had been from where the first Indian said there, they had some had a faithful with clay, they had to hear that point where the missionary. They had to talk,
 
 We not the radical differences of language, and understanding abilities
+
+> [!NOTE]
+> Thoses a short extract of the generation, each generations where of a total of 800 tokens.
+
 
 
 ### Technical Challenges Overcome
