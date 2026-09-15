@@ -14,7 +14,7 @@ While the original architecture was intended for state-of-the-art translation, I
 
 
 #### Model Structure
-While the original paper relies on a full Encoder-Decoder structure for translation tasks, I modified the design to a **Decoder-only** autoregressive architecture (similar to modern LLMs like GPT). The entire model was built from scratch using PyTorch, without relying on pre-built Transformer layers.
+While the original paper relies on a full Encoder-Decoder structure for translation tasks, I modified the design to a Decoder-only autoregressive architecture (similar to modern LLMs like GPT). The entire model was built from scratch using PyTorch, without relying on pre-built Transformer layers.
 
 Model mapping from the paper : 
 <p align="center">
@@ -84,11 +84,13 @@ We not the radical differences of language, and understanding abilities
 
 
 
+
 ### Technical Challenges Overcome
 Coding a Transformer entirely from scratch instead of just importing `nn.Transformer` meant I had to deal with a lot of low-level bugs. Here is what I had to fix:
 
 - **`NaN` Loss Bug:** During early training runs, the model's loss would suddenly collapse to `NaN` (Not a Number). I traced this back to a poorly implemented padding mask inside the Multi-Head Attention block. The flawed mask was causing a division by zero during the Softmax operation. Fixing the mask's topology stabilized the training immediately.
 - **Tensor management:** Managing tensor shapes across 8 attention heads (`Batch, Heads, Time, D_model / Heads`) required a lot of tracking. Additionally, implementing the causal lower-triangular mask correctly was critical to ensure the model couldn't "cheat" by looking at future tokens during training.
 - **Memory Optimization:** To train on an 8GB dataset with a context window of 2048 tokens without triggering CUDA Out-Of-Memory (OOM) errors, I implemented dynamic block chunking, mixed precision (`torch.amp.autocast`), and gradient accumulation.
+
 
 
