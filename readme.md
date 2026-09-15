@@ -20,7 +20,7 @@ Model mapping from the paper :
 <p align="center">
   <img width="453" height="633" alt="image" src="https://github.com/user-attachments/assets/52b40601-45e8-44f1-9236-104dea00f727" />
   <br>
-  <em>*Note: In the original diagram above, I only implemented the right-hand side (the Decoder stack) for autoregressive generation.*</em>
+  <em>Note: I only implemented the right-hand side (the Decoder stack) for autoregressive generation.</em>
 </p>
 
 
