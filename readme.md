@@ -75,7 +75,7 @@ During early testing, the model tended to generate the `<|endoftext|>` token too
 #### Short Generation results (extract):
 > **I went to the** band marches and put him down on. "I don't go." He turned to say in a few weeks. "You're going to him, skimming a few minutes." She wants good money out of me later." She's an open in his head. He looked at him away. She felt so bad glass said, but she'd invited me." Allen when she looked over and Allen back on her her out of her the door. She looked at him a couple of her like that very pot. "She looked over Allenose in a few days, she's breakfast, and went back." Mom. Rick about her, and she'd found the money out, and Allen's seat.
 
-we note some language errors such as "she's breakfast" and the lost of meaning after a few sentences.
+we note some language errors such as "she's breakfast" and the loss of meaning after a few sentences.
 
 
 
