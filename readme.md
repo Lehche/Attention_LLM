@@ -2,6 +2,7 @@
 *Based on the foundational paper "Attention Is All You Need" (Vaswani et al., 2017), Google*
 
 
+
 ### Project Overview
 While the original architecture was intended for state-of-the-art translation, I adapted it in this project to create a predictive text writer. My main objectives were:
 - To create a a next-word predictor (similar to smartphone keyboard suggestions)
@@ -9,8 +10,10 @@ While the original architecture was intended for state-of-the-art translation, I
 
 
 
+
 ### Architecture
 *(Reference paper: [Attention Is All You Need](https://arxiv.org/pdf/1706.03762))*
+
 
 
 #### Model Structure
@@ -24,8 +27,9 @@ Model mapping from the paper :
 </p>
 
 
+
 #### Attention Function Mapping
-To bridge the gap between theory and practice, I mapped the theoretical Multi-Head Attention mechanism directly to my custom PyTorch implementation:
+To bridge the gap between theory and practice, I mapped the theoretical Multi-Head Attention mechanism directly to the custom PyTorch implementation:
 
 <p align="center">
   <img width="45%" src="https://github.com/user-attachments/assets/fc65b82f-c21d-42ae-ae84-f103b2276e27" alt="Theoretical Attention from the paper" />
@@ -33,8 +37,9 @@ To bridge the gap between theory and practice, I mapped the theoretical Multi-He
   <img width="45%" src="https://github.com/user-attachments/assets/235c47f7-ec0b-470c-ba30-948ac27185fb" alt="My PyTorch forward function" />
 </p>
 <p align="center">
-  <em>Left: Original mechanism from the paper | Right: My PyTorch implementation</em>
+  <em>Left: Original mechanism from the paper | Right: PyTorch implementation</em>
 </p>
+
 
 
 
@@ -54,6 +59,7 @@ As shown in the loss evolution graph below, the curve shows no signs of stagnati
 
 
 
+
 ### Results & Observations
 
 Testing the model's capabilities revealed interesting insights into its language understanding and generation behavior:
@@ -65,10 +71,12 @@ Increasing the heat breaks the loops and adds creativity, but pushes the model t
 During early testing, the model tended to generate the `<|endoftext|>` token too frequently, abruptly stopping generation after a few sentences. To evaluate longer outputs, to solve this and observe longer story generation i manually changed the EOS token's probability to `-inf` to force the model to keep writing without interfering too much into its thought processes.
 
 
+
 #### Short Generation results (extract):
 > **I went to the** band marches and put him down on. "I don't go." He turned to say in a few weeks. "You're going to him, skimming a few minutes." She wants good money out of me later." She's an open in his head. He looked at him away. She felt so bad glass said, but she'd invited me." Allen when she looked over and Allen back on her her out of her the door. She looked at him a couple of her like that very pot. "She looked over Allenose in a few days, she's breakfast, and went back." Mom. Rick about her, and she'd found the money out, and Allen's seat.
 
 we note some language errors such as "she's breakfast" and the lost of meaning after a few sentences.
+
 
 
 #### Evolution of the model (4 hours vs 12 hours):
@@ -83,6 +91,7 @@ The Second generation (Loss : 1.3)
 We not the radical differences of language, and understanding abilities
 
 <small>Note: These are short extracts of the output; each generation was capped at a total of 800 tokens.</small>
+
 
 
 
