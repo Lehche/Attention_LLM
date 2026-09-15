@@ -80,8 +80,7 @@ The Second generation (Loss : 1.3)
 
 We not the radical differences of language, and understanding abilities
 
-<br>
-<small>*Note: These are short extracts of the output; each generation was capped at a total of 800 tokens.*</small>
+<small>Note: These are short extracts of the output; each generation was capped at a total of 800 tokens.</small>
 
 
 
