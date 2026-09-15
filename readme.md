@@ -5,7 +5,7 @@
 
 ### Project Overview
 While the original architecture was intended for state-of-the-art translation, I adapted it in this project to create a predictive text writer. My main objectives were:
-- To create a a next-word predictor (similar to smartphone keyboard suggestions)
+- To create a next-word predictor (similar to smartphone keyboard suggestions)
 - To create a Story Generator from a starting sentence, testing the model's actual language understanding and context retention capacities.
 
 
@@ -50,7 +50,7 @@ For the training phase, I went with the following setup :
 - **Tokenization:** BPE (Byte-Pair Encoding) tokenizer, custom-configured with `<|pad|>` and eos (`<|endoftext|>`) special tokens.
 - **Hyperparameters:** AdamW optimizer (`lr=5e-6`, `betas=(0.9, 0.98)`, `weight_decay=0.01`).
 
-I trained the model for 12 hours  (over 400,000 steps) on a Nvidia NVIDIA RTX PRO 6000 Blackwell Workstation Edition, reaching a final loss of **1.39**. 
+I trained the model for 12 hours  (over 400,000 steps) on a NVIDIA Blackwell Workstation Edition, reaching a final loss of **1.39**. 
 
 As shown in the loss evolution graph below, the curve shows no signs of stagnation yet, suggesting that a longer training time would likely yield even better performance.
 <p align="center">
