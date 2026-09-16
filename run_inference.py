@@ -9,7 +9,7 @@ LAYER_NUMBER = 8
 LONGUEUR_BLOC = 2048
 
 
-
+#model
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_model):
         super().__init__()
@@ -193,7 +193,7 @@ def main():
     tokenizer = load_tokenizer(args.tokenizer)
     model = load_model(args.weights, device)
 
-    # If interactive flag set, run a simple numbered menu in terminal
+    #nd : failcheck
     if args.interactive:
         prompt = args.prompt
         max_new_tokens = args.max_new_tokens
